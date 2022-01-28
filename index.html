@@ -98,54 +98,66 @@
             });
             var popupContent = '<table>\
                     <tr>\
-                        <th scope="row">X (m)</th>\
+                        <th colspan="2">' + (feature.properties['Titik'] !== null ? autolinker.link(feature.properties['Titik'].toLocaleString()) : '') + '</th>\
+                    </tr>\
+                    <tr>\
+                        <th>Koordinat UTM</th>\
+                    </tr>\
+                    <tr>\
+                        <td scope="row">X (m)</td>\
                         <td>' + (feature.properties['X'] !== null ? autolinker.link(feature.properties['X'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Y (m)</th>\
+                        <td scope="row">Y (m)</td>\
                         <td>' + (feature.properties['Y'] !== null ? autolinker.link(feature.properties['Y'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">H (Orthometrik)</th>\
-                        <td>' + (feature.properties['Z'] !== null ? autolinker.link(feature.properties['Z'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">Lintang</th>\
-                        <td>' + (feature.properties['LINTANG'] !== null ? autolinker.link(feature.properties['LINTANG'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">Bujur</th>\
-                        <td>' + (feature.properties['BUJUR'] !== null ? autolinker.link(feature.properties['BUJUR'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">Zona</th>\
+                        <td scope="row">Zona</td>\
                         <td>' + (feature.properties['ZONE'] !== null ? autolinker.link(feature.properties['ZONE'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">dX</th>\
+                        <th>Koordinat Geodetik</th>\
+                    </tr>\
+                    <tr>\
+                        <td scope="row">Lintang</td>\
+                        <td>' + (feature.properties['LINTANG'] !== null ? autolinker.link(feature.properties['LINTANG'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td scope="row">Bujur</td>\
+                        <td>' + (feature.properties['BUJUR'] !== null ? autolinker.link(feature.properties['BUJUR'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td scope="row">H (Orthometrik)</td>\
+                        <td>' + (feature.properties['Z'] !== null ? autolinker.link(feature.properties['Z'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th>Ketelitian Titik</th>\
+                    </tr>\
+                    <tr>\
+                        <td scope="row">dX</td>\
                         <td>' + (feature.properties['dX'] !== null ? autolinker.link(feature.properties['dX'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">dY</th>\
+                        <td scope="row">dY</td>\
                         <td>' + (feature.properties['dY'] !== null ? autolinker.link(feature.properties['dY'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">dZ</th>\
+                        <td scope="row">dZ</td>\
                         <td>' + (feature.properties['dZ'] !== null ? autolinker.link(feature.properties['dZ'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Metode Akuisisi</th>\
+                        <th>Metadata</th>\
+                    </tr>\
+                    <tr>\
+                        <td scope="row">Metode Akuisisi</td>\
                         <td>' + (feature.properties['MTD_AKSISI'] !== null ? autolinker.link(feature.properties['MTD_AKSISI'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Tgl Akuisisi</th>\
+                        <td scope="row">Tgl Akuisisi</td>\
                         <td>' + (feature.properties['TGL_UPDATE'] !== null ? autolinker.link(feature.properties['TGL_UPDATE'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['FOTO'] !== null ? autolinker.link(feature.properties['FOTO'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['Titik'] !== null ? autolinker.link(feature.properties['Titik'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2"><img width="250" src="images/' + (feature.properties['FOTO'] !== null ? autolinker.link(feature.properties['FOTO'].toLocaleString()) : '') + '"</td>\
                     </tr>\
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
